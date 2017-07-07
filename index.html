@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Proyecto Final - Sprint 1</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css">
+    <script src="node_modules/sweetalert/dist/sweetalert.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="node_modules/sweetalert/dist/sweetalert.css">
+</head>
+
+<body>
+    <nav>
+        <div class="nav-wrapper">
+            <a href="#" class="brand-logo">Registro de Estudiantes</a>
+        </div>
+    </nav><br>
+    <section class="container">
+        <div class="row">
+            <div class="col s2 offset-s1">
+                <button class="btn-large" onclick="registrarEstudiante()"> Agregar</button>
+                <!--<button id="agregar" class="btn-large">Agregar</button>-->
+            </div>
+            <div class="col s2">
+                <button id="mostrar" class="btn-large">Mostrar</button>
+            </div>
+            <div class="col s2">
+                <button id="buscar" class="btn-large">Buscar</button>
+            </div>
+            <div class="col s2">
+                <button id="top-tecnico" class="btn-large">Técnico</button>
+            </div>
+            <div class="col s2">
+                <button id="top-hse" class="btn-large">Top HSE</button>
+            </div>
+        </div>
+        <dialog id="dialogo" hide style="border: none; border-radius: 10px; ">
+            <div style="background-color: #26a69a;; padding: 10px;  border-radius: 10px; margin-bottom: 25px; color:aliceblue">
+                <h5> Agregar un estudiante</h5>
+            </div>
+            <div>
+                <div class="input-field">
+                    <!--<i class="material-icons prefix">account_circle</i>-->
+                    <label for="nombre" class="active"> Ingrese el nombre de la estudiante</label>
+                    <input id="nombre" type="text" class="validate" maxlength="30">
+                </div>
+                <div class="input-field">
+                    <label for="puntosTecnicos" class="active"> Ingrese sus puntos tecnicos (0-100)</label>
+                    <input type="range" id="puntosTecnicos" min="0" max="100" style="padding: 15px 0;" />
+                </div>
+                <div class="input-field">
+                    <label for="puntosHSE" class="active"> Ingrese los puntos HSE(Habilidades Socio-emocionales) (0-100)</label>
+                    <input type="range" id="puntosHSE" min="0" max="100" style="padding: 15px 0;" />
+                </div>
+            </div>
+            <div align="right">
+                <button id="agregar" class="btn btn-primary">Agregar</button>
+                <button class="btn btn-secondary" onclick="dialogo.close()"> Cancelar</button>
+            </div>
+        </dialog>
+    </section>
+    <section id="resultado">
+        <h4>Resultado</h4>
+        <div id="contenedor-estudiantes"></div>
+    </section>
+    <script src="js/vendor/dont-look-at-me.js"></script>
+    <script src="js/app.js"></script>
+</body>
+
+</html>
